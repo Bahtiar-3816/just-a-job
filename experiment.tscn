@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://boodr4sc7fxgg"]
+
+[ext_resource type="PackedScene" uid="uid://c6rydx4n5qu6w" path="res://play_player.tscn" id="1_tl20c"]
+[ext_resource type="PackedScene" uid="uid://c4ot2tc4qc36q" path="res://static_mobe.tscn" id="2_4hfok"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="new_player" parent="." instance=ExtResource("1_tl20c")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_4hfok")]
+position = Vector2(351, 268)
