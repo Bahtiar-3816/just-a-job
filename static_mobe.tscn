@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4ot2tc4qc36q"]
+
+[ext_resource type="Script" path="res://static_mobe.gd" id="1_1jhy8"]
+[ext_resource type="Texture2D" uid="uid://ddn77rbbdg72a" path="res://icon.svg" id="1_w1wse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aup2c"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj6jc"]
+size = Vector2(140, 141)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+disable_mode = 1
+script = ExtResource("1_1jhy8")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_w1wse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_aup2c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_yj6jc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
